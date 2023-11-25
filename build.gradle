@@ -1,0 +1,67 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'java'
+    id 'maven-publish'
+}
+
+version = '1.0.0'
+group = 'com.github.mcengine'
+
+java.sourceCompatibility = JavaVersion.VERSION_11
+
+allprojects {
+    group = 'com.github.mcengine'
+
+    apply plugin: 'java'
+    apply plugin: 'com.github.johnrengelman.shadow'
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        maven {
+            url 'https://jitpack.io'
+        }
+        maven {
+            url 'https://libraries.minecraft.net'
+        }
+        maven {
+            url 'https://repo.papermc.io/repository/maven-public'
+            }
+        maven {
+            url 'https://oss.sonatype.org/content/groups/public'
+        }
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/central'
+        }
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots'
+        }
+        maven {
+            url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots'
+            content {
+                includeGroup 'org.bukkit'
+                includeGroup 'org.spigotmc'
+            }
+        }
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    // Disable the 'jar' task
+    jar.enabled = false
+}
+
+dependencies {
+    implementation project(path: ':spigot', configuration: 'shadow')
+}
+
+shadowJar {
+    version = '1.0.0'
+    archiveClassifier = null
+    archiveBaseName.set('MCEngine')
+}
+
+jar.enabled = false
+build.dependsOn(shadowJar)

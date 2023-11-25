@@ -1,0 +1,9 @@
+/*
+    GitHub: https://github.com/MCEngine/mcengine
+*/
+rootProject.name = 'mcengine'
+
+/*
+    Server
+*/
+include('spigot')
