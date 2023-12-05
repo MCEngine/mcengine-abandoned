@@ -57,6 +57,27 @@ dependencies {
     implementation project(path: ':spigot', configuration: 'shadow')
 }
 
+publishing {
+    repositories {
+        maven {
+            name = "Github"
+            url = uri("https://maven.pkg.github.com/MCEngine/mcengine")
+            credentials {
+                username = System.getenv("USERNAME")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+    publications {
+        register("jar", MavenPublication) {
+            from(components["java"])
+            pom {
+                url.set("https://github.com/MCEngine/mcengine.git")
+            }
+        }
+    }
+}
+
 shadowJar {
     version = '1.0.0'
     archiveClassifier = null
