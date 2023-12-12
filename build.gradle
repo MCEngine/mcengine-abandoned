@@ -79,7 +79,7 @@ publishing {
 }
 
 shadowJar {
-    version = '1.0.0'
+    version = null
     archiveClassifier = null
     archiveBaseName.set('MCEngine')
 }
