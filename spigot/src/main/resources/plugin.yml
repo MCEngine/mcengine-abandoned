@@ -1,5 +1,5 @@
 author: MCEngine
 name: MCEngine
-version: 1.0.0
+version: ${version}
 main: com.github.mcengine.MCEngine
 api-version: 1.17
