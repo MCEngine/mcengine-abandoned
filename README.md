@@ -1,2 +1,3 @@
+
 `Required`
-- [`SpigotMC`](https://www.spigotmc.org) `latest version`
+- [`SpigotMC`](https://www.spigotmc.org) `latest`
