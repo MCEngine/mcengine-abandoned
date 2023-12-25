@@ -4,6 +4,11 @@
 rootProject.name = 'mcengine'
 
 /*
+    Storage
+*/
+include('mysql')
+
+/*
     Server
 */
 include('spigot')

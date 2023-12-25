@@ -44,6 +44,10 @@ allprojects {
             url = 'https://repo.maven.apache.org/maven2'
         }
     }
+
+    dependencies {
+        implementation 'mysql:mysql-connector-java:5.1.13'
+    }
 }
 
 subprojects {
@@ -67,6 +71,8 @@ subprojects {
 }
 
 dependencies {
+    implementation project(path: ':mysql', configuration: 'shadow')
+
     implementation project(path: ':spigot', configuration: 'shadow')
 }
 
