@@ -1,5 +1,5 @@
 package com.github.mcengine;
 
-public class MYSQL {
+public class MYSQLs {
     
 }
