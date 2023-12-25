@@ -59,13 +59,16 @@ subprojects {
     // Get submodules info
     version = project.findProperty(project.name + "version")
 
-    // replace
-    processResources {
-        def props = [version: version]
-        inputs.properties props
-        filteringCharset 'UTF-8'
-        filesMatching('plugin.yml') {
-            expand props
+    // Bukkit server
+    if (project.name == "spigot") {
+        // replace
+        processResources {
+            def props = [version: version]
+            inputs.properties props
+            filteringCharset 'UTF-8'
+            filesMatching('plugin.yml') {
+                expand props
+            }
         }
     }
 }
