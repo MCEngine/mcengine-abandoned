@@ -1,6 +1,11 @@
 rootProject.name = 'mcengine'
 
 /*
+    util
+*/
+include('util')
+
+/*
     Storage
 */
 include('mysql')

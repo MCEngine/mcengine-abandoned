@@ -75,6 +75,7 @@ subprojects {
 }
 
 dependencies {
+    implementation project(path: ':util', configuration: 'shadow')
     implementation project(path: ':mysql', configuration: 'shadow')
 
     implementation project(path: ':spigot', configuration: 'shadow')
