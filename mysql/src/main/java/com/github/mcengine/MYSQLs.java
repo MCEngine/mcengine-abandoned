@@ -20,11 +20,6 @@ public class MYSQLs {
         properties = Util.readPropertiesFile(path); // Initialize properties here
     }
 
-    // If you need to access properties from outside, consider adding a getter for it
-    public static Properties getProperties() {
-        return properties;
-    }
-
     ///////////////
     //  MySql   //
     /////////////
