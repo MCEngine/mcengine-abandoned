@@ -44,11 +44,6 @@ allprojects {
             url = 'https://repo.maven.apache.org/maven2'
         }
     }
-
-    dependencies {
-        implementation 'mysql:mysql-connector-java:5.1.13'
-        implementation 'org.yaml:snakeyaml:2.2'
-    }
 }
 
 subprojects {
