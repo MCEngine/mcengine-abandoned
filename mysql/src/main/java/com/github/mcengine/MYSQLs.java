@@ -40,4 +40,15 @@ public class MYSQLs {
             connection.close();
         }
     }
+
+    // Execute SQL query
+    public static void executeQuery(String query) throws SQLException {
+        if (connection == null || connection.isClosed()) {
+            throw new SQLException("Connection is not established.");
+        }
+
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate(query);
+        }
+    }
 }
