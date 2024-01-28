@@ -86,8 +86,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/MCEngine/mcengine")
             credentials {
-                username = System.getenv("GitHub_User")
-                password = System.getenv("MCEngine_GitHub_Token_Pkg")
+                username = System.getenv("GITHUB_USER")
+                password = System.getenv("MCENGINE_GITHUB_TOKEN_PKG_WR")
             }
         }
     }
