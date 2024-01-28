@@ -1,5 +1,9 @@
 package com.github.mcengine;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 public class Util {
     public static Properties readPropertiesFile(String filePath) {
         // Create a Properties object
