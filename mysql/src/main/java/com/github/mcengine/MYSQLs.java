@@ -8,6 +8,9 @@ public class MYSQLs {
     private static Properties properties; // Delay initialization
     private static Connection connection;
 
+    ///////////////////////
+    //  Needed variable //
+    /////////////////////
     public static String getPath() {
         return path;
     }
@@ -22,6 +25,9 @@ public class MYSQLs {
         return properties;
     }
 
+    ///////////////
+    //  MySql   //
+    /////////////
     // Initialize the connection
     public static void initializeConnection() throws SQLException {
         String dbUrl = properties.getProperty("url");
