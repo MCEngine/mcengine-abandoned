@@ -1,13 +1,22 @@
 package com.github.mcengine;
 
-public class MYSQLs {
-    private String path;
+import java.util.Properties;
 
-    public String getPath() {
+public class MYSQLs {
+    private static String path;
+    private static Properties properties; // Delay initialization
+
+    public static String getPath() {
         return path;
     }
     
-    public void setPath(String path) {
-        this.path = path;
+    public static void setPath(String newPath) {
+        path = newPath;
+        properties = Util.readPropertiesFile(path); // Initialize properties here
+    }
+
+    // If you need to access properties from outside, consider adding a getter for it
+    public static Properties getProperties() {
+        return properties;
     }
 }
