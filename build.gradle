@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 
-version = project.findProperty("mcengineversion")
+version = project.findProperty(project.name + "version")
 group = 'com.github.mcengine'
 
 java.sourceCompatibility = JavaVersion.VERSION_11
