@@ -1,6 +1,6 @@
 package com.github.mcengine;
 
-public class Utils {
+public class Util {
     public static Properties readPropertiesFile(String filePath) {
         // Create a Properties object
         Properties properties = new Properties();
