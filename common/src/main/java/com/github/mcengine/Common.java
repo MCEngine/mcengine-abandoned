@@ -48,8 +48,7 @@ public class Common {
             checkFile(file);
         }
         Properties properties = Util.readPropertiesFile(path + "/db.properties");
-        for (int i=0; i<querys.length;i++) {
-            String query = querys[i];
+        for (String query : querys) {
             MYSQLs.initializeConnection(properties);
             MYSQLs.executeQuery(query);
             MYSQLs.closeConnection();
