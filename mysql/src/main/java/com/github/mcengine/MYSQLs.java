@@ -6,9 +6,6 @@ import java.util.Properties;
 public class MYSQLs {
     private static Connection connection;
 
-    ///////////////
-    //  MySql   //
-    /////////////
     // Initialize the connection
     public static void initializeConnection(Properties properties) throws SQLException {
         String dbUrl = properties.getProperty("url");
