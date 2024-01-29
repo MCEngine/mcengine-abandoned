@@ -3,6 +3,7 @@ package com.github.mcengine;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Properties;
 
 public class Common {
@@ -42,7 +43,7 @@ public class Common {
         }
     }
 
-    public static void run(String path, File[] files, String[] querys) throws SQLException {
+    public static void run(String path, File[] files, List<String> querys) throws SQLException {
         for (File file : files) {
             file = new File(path + '/' + file);
             checkFile(file);
