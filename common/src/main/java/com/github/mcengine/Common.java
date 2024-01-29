@@ -57,7 +57,7 @@ public class Common {
     // Check if the Database Table exists
     public static void checkDBTable(String[] querys) throws SQLException {
         try {
-            MYSQLs.initializeConnection();
+            MYSQLs.initializeConnection(properties);
             for (String query : querys) {
                 MYSQLs.executeQuery(query);
             }
