@@ -9,7 +9,6 @@ import java.util.Properties;
 public class Common {
     private static String path;
     private static Properties properties; // Delay initialization
-    private static Connection connection;
 
     public static String getPath() {
         return path;
