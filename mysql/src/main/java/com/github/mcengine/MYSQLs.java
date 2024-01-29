@@ -4,14 +4,13 @@ import java.sql.*;
 import java.util.Properties;
 
 public class MYSQLs {
-    private static Properties properties; // Delay initialization
     private static Connection connection;
 
     ///////////////
     //  MySql   //
     /////////////
     // Initialize the connection
-    public static void initializeConnection() throws SQLException {
+    public static void initializeConnection(Properties properties) throws SQLException {
         String dbUrl = properties.getProperty("url");
         String dbUsername = properties.getProperty("username");
         String dbPassword = properties.getProperty("password");
