@@ -6,25 +6,6 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class Common {
-    private static String path;
-    private static Properties properties; // Delay initialization
-
-    public static String getPath() {
-        return path;
-    }
-
-    public static String setPath(String gPath) {
-        return path=gPath;
-    }
-
-    public static Properties getProperties() {
-        return properties;
-    }
-
-    public static Properties setProperties() {
-        return properties = Util.readPropertiesFile(path);
-    }
-
     // Check if directory exits
     public static void checkDir(File dir) {
         if (dir.exists()) {
@@ -38,7 +19,7 @@ public class Common {
             }
         }
     }
-    
+
     // Check if the file exists
     public static void checkFile(File file) {
         if (file.exists()) {
@@ -62,14 +43,28 @@ public class Common {
     }
 
     // Check if the Database Table exists
-    public static void checkDBTable(String[] querys) throws SQLException {
+    public static void checkDBTable(Properties properties, String[] querys) throws SQLException {
         try {
-            MYSQLs.initializeConnection(getProperties());
+            MYSQLs.initializeConnection(properties);
             for (String query : querys) {
                 MYSQLs.executeQuery(query);
             }
         } finally {
             // Ensure the connection is closed even if an exception occurs
+            MYSQLs.closeConnection();
+        }
+    }
+
+    public static void run(String path, File[] files, String[] querys) throws SQLException {
+        for (int i=0; i<files.length;i++) {
+            File file = new File(path + '/' + files[i]);
+            checkFile(file);
+        }
+        Properties properties = Util.readPropertiesFile(path + "/db.properties");
+        for (int i=0; i<querys.length;i++) {
+            String query = querys[i];
+            MYSQLs.initializeConnection(properties);
+            MYSQLs.executeQuery(query);
             MYSQLs.closeConnection();
         }
     }
