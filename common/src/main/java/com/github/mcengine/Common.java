@@ -42,19 +42,6 @@ public class Common {
         }
     }
 
-    // Check if the Database Table exists
-    public static void checkDBTable(Properties properties, String[] querys) throws SQLException {
-        try {
-            MYSQLs.initializeConnection(properties);
-            for (String query : querys) {
-                MYSQLs.executeQuery(query);
-            }
-        } finally {
-            // Ensure the connection is closed even if an exception occurs
-            MYSQLs.closeConnection();
-        }
-    }
-
     public static void run(String path, File[] files, String[] querys) throws SQLException {
         for (int i=0; i<files.length;i++) {
             File file = new File(path + '/' + files[i]);
