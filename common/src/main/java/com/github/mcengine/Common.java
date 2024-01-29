@@ -2,7 +2,6 @@ package com.github.mcengine;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -65,7 +64,7 @@ public class Common {
     // Check if the Database Table exists
     public static void checkDBTable(String[] querys) throws SQLException {
         try {
-            MYSQLs.initializeConnection(properties);
+            MYSQLs.initializeConnection(getProperties());
             for (String query : querys) {
                 MYSQLs.executeQuery(query);
             }
