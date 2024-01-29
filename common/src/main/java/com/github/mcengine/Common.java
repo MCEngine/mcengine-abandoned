@@ -43,8 +43,8 @@ public class Common {
     }
 
     public static void run(String path, File[] files, String[] querys) throws SQLException {
-        for (int i=0; i<files.length;i++) {
-            File file = new File(path + '/' + files[i]);
+        for (File file : files) {
+            file = new File(path + '/' + file);
             checkFile(file);
         }
         Properties properties = Util.readPropertiesFile(path + "/db.properties");
