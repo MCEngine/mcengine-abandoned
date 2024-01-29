@@ -2,9 +2,23 @@ package com.github.mcengine;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class Common {
+    private static String path;
+    private static Properties properties; // Delay initialization
+    private static Connection connection;
+
+    public static String getPath() {
+        return path;
+    }
+
+    public static String setPath(String gPath) {
+        return path=gPath;
+    }
+
     // Check if directory exits
     public static void checkDir(File dir) {
         if (dir.exists()) {

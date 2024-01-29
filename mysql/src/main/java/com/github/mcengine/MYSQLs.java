@@ -4,21 +4,8 @@ import java.sql.*;
 import java.util.Properties;
 
 public class MYSQLs {
-    private static String path;
     private static Properties properties; // Delay initialization
     private static Connection connection;
-
-    ///////////////////////
-    //  Needed variable //
-    /////////////////////
-    public static String getPath() {
-        return path;
-    }
-    
-    public static void setPath(String newPath) {
-        path = newPath;
-        properties = Util.readPropertiesFile(path); // Initialize properties here
-    }
 
     ///////////////
     //  MySql   //
