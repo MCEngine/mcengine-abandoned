@@ -2,7 +2,7 @@ package com.github.mcengine;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
+import java.nio.file.Path;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -16,6 +16,14 @@ public class Common {
 
     public static String setPath(String gPath) {
         return path=gPath;
+    }
+
+    public static Properties getProperties() {
+        return properties;
+    }
+
+    public static Properties setProperties() {
+        return properties = Util.readPropertiesFile(path);
     }
 
     // Check if directory exits
