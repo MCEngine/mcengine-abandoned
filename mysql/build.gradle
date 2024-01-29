@@ -4,5 +4,4 @@ plugins {
 
 dependencies {
     implementation group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
-    implementation project(':util')
 }
