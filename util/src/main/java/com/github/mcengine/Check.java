@@ -2,6 +2,7 @@ package com.github.mcengine;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class Check {
     // Check if directory exits
@@ -37,6 +38,19 @@ public class Check {
             } catch (IOException e) {
                 System.err.println("Error creating the file: " + e.getMessage());
             }
+        }
+    }
+
+    // Check if the Database Table exists
+    public static void checkDBTable(String[] querys) throws SQLException {
+        try {
+            MYSQLs.initializeConnection();
+            for (String query : querys) {
+                MYSQLs.executeQuery(query);
+            }
+        } finally {
+            // Ensure the connection is closed even if an exception occurs
+            MYSQLs.closeConnection();
         }
     }
 }
