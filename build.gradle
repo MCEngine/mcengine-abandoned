@@ -70,6 +70,7 @@ subprojects {
 }
 
 dependencies {
+    implementation project(path: ':common', configuration: 'shadow')
     implementation project(path: ':util', configuration: 'shadow')
     implementation project(path: ':mysql', configuration: 'shadow')
 

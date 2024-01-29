@@ -1,5 +1,6 @@
 rootProject.name = 'mcengine'
 
+include('common')
 /*
     util
 */
