@@ -40,9 +40,6 @@ allprojects {
                 includeGroup 'org.spigotmc'
             }
         }
-        maven {
-            url = 'https://repo.maven.apache.org/maven2'
-        }
     }
 }
 
