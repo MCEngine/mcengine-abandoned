@@ -1,0 +1,10 @@
+{
+    "name": "Container",
+    "extensions": [
+      "alefragnani.bookmarks", // Booke Marks
+      "vscjava.vscode-java-pack", // Java pack
+      "redhat.java", // RedHat
+      "vscjava.vscode-gradle", // Gradle
+      "eamodio.gitlens" // GitLens
+    ]
+  }
