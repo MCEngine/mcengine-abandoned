@@ -1,10 +1,17 @@
 {
     "name": "Container",
-    "extensions": [
-      "alefragnani.bookmarks", // Booke Marks
-      "vscjava.vscode-java-pack", // Java pack
-      "redhat.java", // RedHat
-      "vscjava.vscode-gradle", // Gradle
-      "eamodio.gitlens" // GitLens
-    ]
-  }
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "workbench.colorTheme": "Default Dark Modern" // Dark Modern
+            },
+            "extensions": [
+                "alefragnani.bookmarks", // Booke Marks
+                "vscjava.vscode-java-pack", // Java pack
+                "redhat.java", // RedHat
+                "vscjava.vscode-gradle", // Gradle
+                "eamodio.gitlens" // GitLens
+            ]
+        }
+    }
+}
